@@ -38,6 +38,8 @@ const Home = () => {
       setUserToToggle(null)
   }
 
+
+  // increment likes based on click of heart
   if (userToIncrementLikes) {
   const newLikes = userToIncrementLikes.likes + 1
   const data = {likes: newLikes}

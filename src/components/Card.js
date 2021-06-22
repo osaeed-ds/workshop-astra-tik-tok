@@ -5,6 +5,8 @@ const Card = ({ user, toggleFollow, incrementLikes }) => {
   const timestamp = user.timestamp
   const timeStampReformat = timestamp.slice(2, 7)
 
+
+  // onclick of fa=heart calls incrementLikes
   return (
     <div className="card">
       <div className="break" />

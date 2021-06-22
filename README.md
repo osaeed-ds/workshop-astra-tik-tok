@@ -1,4 +1,8 @@
 <!--- STARTEXCLUDE --->
+## Updated Version
+Follow all the instructions below.  The only change to the default version that I have added code to enable increment of likes by clicking on the heart on a post.  This was accomplished by modifying Cards.js to add an onclick handler to the heart icon and by adding logic to incrementLikes in Home.js.
+
+----------------------
 # Astra DB TikTok Clone Workshop
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/DataStax-Academy/workshop-spring-data-cassandra) 

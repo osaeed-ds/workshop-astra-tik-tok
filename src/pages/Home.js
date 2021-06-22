@@ -7,6 +7,8 @@ import axios from 'axios'
 const Home = () => {
   const [users, setUsers] = useState(null)
   const [userToToggle, setUserToToggle] = useState(null)
+  const [userToIncrementLikes, setLikes] = useState(null)
+  
   let descendingUsers
   let topFiveNotFollowing
   let topFiveFollowing
@@ -36,6 +38,21 @@ const Home = () => {
       setUserToToggle(null)
   }
 
+  if (userToIncrementLikes) {
+  const newLikes = userToIncrementLikes.likes + 1
+  const data = {likes: newLikes}
+
+   axios.put('/.netlify/functions/edit', {userId: userToIncrementLikes.id, data: data })
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error('error:' + err))
+    .then(() => fetchData())
+      setLikes(null)
+  }
+
+
+
+
   useEffect(() => {
     addData()
     fetchData()
@@ -63,6 +80,7 @@ const Home = () => {
               key={index}
               user={descendingUser}
               toggleFollow={userToToggle => setUserToToggle(userToToggle)}
+              incrementLikes={userToIncrementLikes => setLikes(userToIncrementLikes)}
             />
           ))}
         </div>
